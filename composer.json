@@ -1,0 +1,22 @@
+{
+    "name": "uyu/polymorphism-php",
+    "authors": [
+        {
+            "name": "Yuki Uehara"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Uyu\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Uyu\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
