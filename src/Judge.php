@@ -3,9 +3,22 @@
 
 namespace Uyu;
 
+use Uyu\CalculationAlgorithm;
+
 
 class Judge
 {
+    // property
+    public $nums1;
+    public $nums2;
+
+    // constructor
+    public function __construct($nums1, $nums2)
+    {
+        $this->nums1 = $nums1;
+        $this->nums2 = $nums2;
+    }
+
     public static function tryGetNextFormula($formula)
     {
 
