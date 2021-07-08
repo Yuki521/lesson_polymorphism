@@ -3,9 +3,7 @@
 require __DIR__ . '/vendor/autoload.php';
 
 use Uyu\AlgorithmType;
-use Uyu\Calc;
 use Uyu\Player;
-use Uyu\CalculationAlgorithm;
 
 function println(string $message, $withLn = true)
 {

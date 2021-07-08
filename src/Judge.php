@@ -3,14 +3,13 @@
 
 namespace Uyu;
 
-use CalculationAlgorithm;
 
-class Player
+class Judge
 {
     public static function tryGetNextFormula($formula)
     {
 
-        if (!preg_match('/[+-m*]/', $formula, $array_operator)) {
+        if (!preg_match('/[+-m*%]/', $formula, $array_operator)) {
             return null;
         }
         $operator = implode($array_operator);
@@ -29,15 +28,5 @@ class Player
         }
 
         return $nums;
-    }
-
-    public function nextFormula($nums)
-    {
-        $position = $this->tryGetNextNums($nums);
-        if ($position !== null) {
-            return $position;
-        }
-
-        return $this->CalculationAlgorithm::calc($nums[1], $nums[2]);
     }
 }
