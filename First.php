@@ -17,35 +17,37 @@ function println(string $message, $withLn = true)
 println('######## 電卓もどき ########');
 println('式を (演算子(+,-,*,m,%) x y) の形で入力してください');
 
-$formula = fgets(STDIN);
-$operator = Judge::tryGetNextFormula($formula);
-$nums = Judge::tryGetNextNums($formula);
 
+$operator = false;
 
-// var_dump($operator);
-// var_dump($nums);
-// var_dump($nums[1]);
-
-switch ($operator) {
-    case '+':
-        $answer = $nums[1] + $nums[2];
+while ($operator = true) {
+    $formula = fgets(STDIN);
+    if (Judge::quit($formula)) {
         break;
+    }
+    $operator = Judge::tryGetNextFormula($formula);
+    $nums = Judge::tryGetNextNums($formula);
+    switch ($operator) {
+        case '+':
+            $answer = $nums[1] + $nums[2];
+            break;
 
-    case '-':
-        $answer = $nums[1] - $nums[2];
-        break;
+        case '-':
+            $answer = $nums[1] - $nums[2];
+            break;
 
-    case '*':
-        $answer = $nums[1] * $nums[2];
-        break;
+        case '*':
+            $answer = $nums[1] * $nums[2];
+            break;
 
-    case 'm':
-        $answer = $nums[1] / $nums[2];
-        break;
+        case 'm':
+            $answer = $nums[1] / $nums[2];
+            break;
 
-    case '%':
-        $answer = $nums[1] % $nums[2];
-        break;
-        return $answer;
+        case '%':
+            $answer = $nums[1] % $nums[2];
+            break;
+            return $answer;
+    }
+    println('答えは ' . $answer . ' です。');
 }
-println($answer);
