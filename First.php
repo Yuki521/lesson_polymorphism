@@ -3,6 +3,7 @@
 require __DIR__ . '/vendor/autoload.php';
 
 use Uyu\Judge;
+use Uyu\CalculationAlgorithm;
 
 function println(string $message, $withLn = true)
 {
@@ -13,6 +14,13 @@ function println(string $message, $withLn = true)
     }
 }
 
+function 計算する(CalculationAlgorithm $calculationAlgorithm)
+{
+    $nums1 = 1;
+    $nums2 = 2;
+    $calculationAlgorithm->calc($nums1, $nums2);
+    var_dump($calculationAlgorithm);
+}
 
 println('######## 電卓もどき ########');
 println('式を (演算子(+,-,*,m,%) x y) の形で入力してください');
